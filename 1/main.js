@@ -2,6 +2,7 @@ const lineReader = require('readline').createInterface({
     input: require('fs').createReadStream('input.txt')
 });
 
+
 let expenses = [];
 
 lineReader.on('line', function (line) {
