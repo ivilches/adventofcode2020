@@ -46,7 +46,7 @@ let readedPassports = [];
 let currentReadingPassport = {};
 
 const lineReader = require('readline').createInterface({
-    input: require('fs').createReadStream('input.txt')
+    input: require('fs').createReadStream('../input.txt')
 });
 
 lineReader.on('line', function (line) {
