@@ -44,5 +44,18 @@ lineReader.on('line', function (line) {
 
 lineReader.on('close', () => {
     const highest = seats.sort((a, b) => b.id - a.id)[0];
-    console.log(highest.id);
+    console.log(`HIGHEST ID ${highest.id}`);
+
+    const ordered = seats.sort((a, b) => a.id - b.id);
+
+    for (let seat = 0; seat < ordered.length; seat++) {
+        if (ordered[seat+1] !== undefined) {  
+            const expectedNext = ordered[seat].id + 1;
+            const effectiveNext = ordered[seat+1].id;
+
+            if (expectedNext !== effectiveNext) {
+                console.log(`MINE! ${expectedNext}`);
+            }
+        }
+    }
 });
